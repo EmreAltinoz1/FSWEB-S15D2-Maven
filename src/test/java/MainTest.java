@@ -1,3 +1,4 @@
+import org.example.StringSet;
 import org.example.entity.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -35,10 +37,12 @@ public class MainTest {
 
         taskSet1 = new HashSet<>();
         taskSet1.add(task1);
-        taskSet2 = new HashSet<>();
         taskSet1.add(task2);
+        
+        taskSet2 = new HashSet<>();
+        taskSet2.add(task3);
+        
         taskSet3 = new HashSet<>();
-        taskSet1.add(task3);
 
         taskData = new TaskData(taskSet1, taskSet2, taskSet3, new HashSet<>());
     }
